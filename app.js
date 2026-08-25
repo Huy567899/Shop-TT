@@ -3,7 +3,7 @@ const PACKS=[
  {name:"Gói 2",price:420000,coins:1500},
  {name:"Gói 3",price:750000,coins:2700},
  {name:"Gói 4",price:990000,coins:3200},
- {name:"Gói 5",price:120000,coins:5000},
+ {name:"Gói 5",price:1200000,coins:5000},
 ];
 let selected=null;
 const $=id=>document.getElementById(id);
