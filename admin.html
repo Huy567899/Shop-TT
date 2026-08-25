@@ -1,0 +1,5 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SHOP TT • Quản lý đơn</title><link rel="stylesheet" href="style.css"></head><body><main><section class="card"><h2>🎀 SHOP TT • Quản lý đơn (demo)</h2><p class="small">Bản demo lưu đơn trên trình duyệt. Khi đưa lên mạng thật cần cơ sở dữ liệu + đăng nhập admin.</p><div id="list"></div></section></main><script>
+const fmt=n=>new Intl.NumberFormat("vi-VN").format(n);
+function load(){const a=JSON.parse(localStorage.getItem("shoptt_orders")||"[]");document.getElementById("list").innerHTML=a.length?a.map((o,i)=>`<div class="status"><b>${o.id}</b> — ${o.status}<br>ID: ${o.tiktokId} • ${o.package} • ${fmt(o.price)}đ<br><button onclick="done(${i})">Đánh dấu đã xử lý</button></div>`).join(""):"Chưa có đơn."}
+function done(i){const a=JSON.parse(localStorage.getItem("shoptt_orders")||"[]");a[i].status="Đã xử lý";localStorage.setItem("shoptt_orders",JSON.stringify(a));load()}load();
+</script></body></html>

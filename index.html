@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SHOP TT • Mua xu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">🎀 <b>SHOP TT</b></div>
+  <nav><a href="#buy">Mua xu</a><a href="#orders">Đơn hàng</a></nav>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <div class="pill">🌸 HELLO KITTY PINK STYLE</div>
+    <h1>Mua xu TikTok<br><span>nhanh & dễ dàng</span></h1>
+    <p>Chọn gói → nhập ID TikTok → nhận mã đơn → quét QR chuyển khoản.</p>
+  </div>
+  <div class="cat">🎀<br>🐱</div>
+</section>
+
+<section id="buy" class="card">
+  <h2>💗 Chọn gói xu</h2>
+  <div id="packages" class="packages"></div>
+
+  <label>ID TikTok</label>
+  <input id="tiktokId" placeholder="Nhập ID TikTok" autocomplete="off">
+
+  <button id="create">Tạo đơn & thanh toán 💕</button>
+  <p class="small">Đây là hệ thống nhận đơn. Việc tự động cộng xu thật cần API/đối tác được TikTok cho phép.</p>
+</section>
+
+<section id="payment" class="card hidden">
+  <h2>💳 Thanh toán đơn hàng</h2>
+  <div class="ordergrid">
+    <div>
+      <p><b>Mã đơn:</b> <span id="oid"></span></p>
+      <p><b>ID TikTok:</b> <span id="tid"></span></p>
+      <p><b>Gói:</b> <span id="pack"></span></p>
+      <p class="amount"><b>Số tiền:</b> <span id="amount"></span>đ</p>
+      <div class="bank">
+        <b>MB BANK</b><br>
+        STK: <b>0785818099</b><br>
+        Chủ TK: <b>LE VAN HUY</b><br>
+        Nội dung: <b id="info"></b>
+      </div>
+    </div>
+    <div class="qrwrap">
+      <img id="qr" alt="QR chuyển khoản MB BANK">
+      <b>Quét QR để chuyển khoản</b>
+      <span class="small">QR tự điền số tiền và mã đơn.</span>
+    </div>
+  </div>
+  <button id="done">Tôi đã chuyển khoản</button>
+</section>
+
+<section id="orders" class="card">
+  <h2>📦 Kiểm tra đơn</h2>
+  <input id="searchOrder" placeholder="Nhập mã đơn hàng">
+  <button id="search">Kiểm tra trạng thái</button>
+  <div id="result"></div>
+</section>
+
+<footer>🎀 SHOP TT • MB BANK • 0785818099 • LE VAN HUY</footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
