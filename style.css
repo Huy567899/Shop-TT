@@ -29,7 +29,7 @@ button{width:100%;padding:15px;margin-top:14px;border:0;border-radius:15px;backg
 footer{text-align:center;padding:25px;color:#9a5c78}
 
 /* Zalo nổi + popup */
-.zalo-fab{position:fixed;right:18px;bottom:18px;z-index:20;width:auto;min-width:72px;padding:10px 15px;margin:0;border-radius:999px;background:#ff5aa5;box-shadow:0 8px 25px rgba(216,63,130,.28);display:flex;align-items:center;justify-content:center;gap:7px;animation:zaloFloat 2.8s ease-in-out infinite}
+.zalo-fab{position:fixed;right:18px;bottom:92px;z-index:9999;width:auto;min-width:72px;padding:10px 15px;margin:0;border-radius:999px;background:#ff5aa5;box-shadow:0 8px 25px rgba(216,63,130,.28);display:flex;align-items:center;justify-content:center;gap:7px;animation:zaloFloat 2.8s ease-in-out infinite}
 .zalo-icon{width:29px;height:29px;border-radius:50%;background:#fff;color:#168cff;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:18px}
 .zalo-text{font-size:15px}
 .zalo-overlay{position:fixed;inset:0;z-index:30;background:rgba(90,35,62,.48);display:flex;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(4px)}
