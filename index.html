@@ -11,7 +11,6 @@
   <div class="brand">🎀 <b>SHOP TT</b></div>
   <nav><a href="#buy">Mua xu</a><a href="#orders">Đơn hàng</a></nav>
 </header>
-
 <main>
 <section class="hero">
   <div>
@@ -25,10 +24,8 @@
 <section id="buy" class="card">
   <h2>💗 Chọn gói xu</h2>
   <div id="packages" class="packages"></div>
-
   <label>ID TikTok</label>
   <input id="tiktokId" placeholder="Nhập ID TikTok" autocomplete="off">
-
   <button id="create">Tạo đơn & thanh toán 💕</button>
   <p class="small">Đây là hệ thống nhận đơn. Việc tự động cộng xu thật cần API/đối tác được TikTok cho phép.</p>
 </section>
@@ -66,6 +63,51 @@
 
 <footer>🎀 SHOP TT • MB BANK • 0785818099 • LE VAN HUY</footer>
 </main>
+
+<!-- Nút Zalo nổi -->
+<button class="zalo-fab" id="zaloFab" aria-label="Liên hệ Zalo">
+  <span class="zalo-icon">Z</span>
+  <span class="zalo-text">Zalo</span>
+</button>
+
+<!-- Popup QR Zalo -->
+<div class="zalo-overlay hidden" id="zaloOverlay">
+  <div class="zalo-modal" role="dialog" aria-modal="true" aria-labelledby="zaloTitle">
+    <button class="zalo-close" id="zaloClose" aria-label="Đóng">×</button>
+    <div class="zalo-badge">ZALO</div>
+    <h2 id="zaloTitle">Liên hệ Văn Huy</h2>
+    <p>Quét mã QR bên dưới để kết bạn và nhắn tin Zalo.</p>
+    <img class="zalo-qr" src="zalo-qr.jpeg" alt="QR Zalo Văn Huy">
+    <div class="zalo-name">💗 Văn Huy</div>
+    <div class="zalo-hint">Mở Zalo → Quét QR → Kết bạn</div>
+  </div>
+</div>
+
 <script src="app.js"></script>
+<script>
+(function () {
+  const fab = document.getElementById("zaloFab");
+  const overlay = document.getElementById("zaloOverlay");
+  const close = document.getElementById("zaloClose");
+
+  function openZalo() {
+    overlay.classList.remove("hidden");
+    document.body.classList.add("zalo-lock");
+  }
+  function closeZalo() {
+    overlay.classList.add("hidden");
+    document.body.classList.remove("zalo-lock");
+  }
+
+  fab.addEventListener("click", openZalo);
+  close.addEventListener("click", closeZalo);
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) closeZalo();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeZalo();
+  });
+})();
+</script>
 </body>
 </html>
