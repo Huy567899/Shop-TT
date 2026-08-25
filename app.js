@@ -8,8 +8,7 @@ const PACKS=[
 let selected=null;
 const $=id=>document.getElementById(id);
 const fmt=n=>new Intl.NumberFormat("vi-VN").format(n);
-
-$("packages").innerHTML=PACKS.map((p,i)=>`<div class="package" data-i="${i}">🎀<div>${p.name}</div><b>${fmt(p.price)}đ</b></div>`).join("");
+$("packages").innerHTML=PACKS.map((p,i)=>`<div class="package" data-i="${i}">🎀<div>${p.name}</div><b>${fmt(p.price)}đ</b></<div>🪙 ${p.coins} Coins</div>`).join("");
 document.querySelectorAll(".package").forEach(el=>el.onclick=()=>{
  document.querySelectorAll(".package").forEach(x=>x.classList.remove("active"));
  el.classList.add("active"); selected=PACKS[+el.dataset.i];
